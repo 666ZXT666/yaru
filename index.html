@@ -6,161 +6,127 @@
 <title>刘亚茹 - 个人简历</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", sans-serif; background: #f0f2f5; }
+  body { font-family: "SimSun", "Microsoft YaHei", serif; background: #fff; color: #333; }
   .resume {
-    max-width: 860px; margin: 30px auto; display: flex;
-    background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden;
+    max-width: 800px; margin: 0 auto; padding: 50px 60px;
   }
-  /* 左侧栏 */
-  .sidebar {
-    width: 240px; background: #2c3e50; color: #fff; padding: 36px 24px;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .avatar {
-    width: 90px; height: 90px; border-radius: 50%; background: #3d566e;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 36px; color: #a8c6df; margin-bottom: 16px; border: 3px solid #4a90a4;
-  }
-  .sidebar h1 { font-size: 22px; margin-bottom: 6px; letter-spacing: 2px; }
-  .sidebar .subtitle { font-size: 12px; color: #8eaab8; margin-bottom: 28px; }
-  .sidebar-section { width: 100%; margin-bottom: 22px; }
-  .sidebar-section h3 {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
-    color: #8eaab8; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #3d566e;
-  }
-  .sidebar-item { font-size: 13px; color: #d4e3ed; margin-bottom: 8px; display: flex; align-items: center; line-height: 1.5; }
-  .sidebar-item .icon { margin-right: 8px; font-size: 14px; width: 18px; text-align: center; }
-  .sidebar .qr-section { margin-top: auto; text-align: center; }
-  .sidebar .qr-section img { width: 90px; height: 90px; border-radius: 4px; }
-  .sidebar .qr-section p { font-size: 10px; color: #8eaab8; margin-top: 6px; }
 
-  /* 右侧主体 */
-  .main { flex: 1; padding: 36px 36px; }
-  .section { margin-bottom: 26px; }
+  /* 头部 */
+  .header { text-align: center; margin-bottom: 36px; }
+  .header h1 { font-size: 28px; font-weight: bold; letter-spacing: 4px; margin-bottom: 12px; }
+  .header .info { font-size: 14px; color: #444; }
+  .header .info span { margin: 0 6px; }
+  .header .info .divider { color: #999; }
+
+  /* 章节 */
+  .section { margin-bottom: 28px; }
   .section-title {
-    font-size: 15px; font-weight: bold; color: #2c3e50;
-    padding-bottom: 8px; margin-bottom: 12px;
-    border-bottom: 2px solid #3498db; display: flex; align-items: center;
+    font-size: 17px; font-weight: bold; color: #000;
+    padding-bottom: 8px; border-bottom: 1.5px solid #000; margin-bottom: 14px;
   }
-  .section-title .dot { width: 8px; height: 8px; background: #3498db; border-radius: 50%; margin-right: 10px; }
-  .section-content { font-size: 13.5px; color: #444; line-height: 1.9; }
-  .edu-item { margin-bottom: 8px; }
-  .edu-item .school { font-weight: bold; color: #2c3e50; }
-  .edu-item .detail { color: #666; font-size: 13px; }
-  .skill-tag {
-    display: inline-block; background: #ebf5fb; color: #2980b9;
-    padding: 4px 14px; border-radius: 20px; margin-right: 8px; margin-bottom: 8px; font-size: 13px;
-  }
-  .exp-item { margin-bottom: 10px; }
-  .exp-item .title { font-weight: bold; color: #2c3e50; margin-bottom: 4px; }
-  .exp-item .desc { color: #555; padding-left: 12px; border-left: 2px solid #e0e0e0; }
-  .evaluation { color: #555; text-indent: 2em; }
+  .section-content { font-size: 14px; line-height: 1.9; color: #333; }
 
-  /* 求职意向高亮 */
-  .intention {
-    background: #f0f9ff; border: 1px solid #bae0f5; border-radius: 6px;
-    padding: 12px 16px; display: flex; align-items: center;
-  }
-  .intention .label { color: #666; font-size: 13px; margin-right: 12px; }
-  .intention .value { color: #2980b9; font-weight: bold; font-size: 14px; }
+  /* 教育背景 */
+  .edu-line { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .edu-line .left { font-weight: bold; font-size: 14px; }
+  .edu-line .right { font-size: 13px; color: #555; }
+  .edu-detail { font-size: 13.5px; color: #444; margin-top: 4px; }
+
+  /* 列表 */
+  .section-content ul { padding-left: 18px; }
+  .section-content ul li { margin-bottom: 6px; font-size: 14px; }
+
+  /* 求职意向 */
+  .intention-table { width: 100%; font-size: 14px; }
+  .intention-table td { padding: 4px 0; }
+  .intention-table .label { color: #666; width: 80px; }
+  .intention-table .value { color: #333; }
 
   @media print {
-    body { background: white; }
-    .resume { box-shadow: none; margin: 0; border-radius: 0; }
+    .resume { padding: 30px 40px; }
   }
-  @media (max-width: 600px) {
-    .resume { flex-direction: column; margin: 0; border-radius: 0; }
-    .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 20px; }
-    .main { padding: 20px; }
+  @media (max-width: 500px) {
+    .resume { padding: 24px 20px; }
+    .header h1 { font-size: 24px; }
   }
 </style>
 </head>
 <body>
 <div class="resume">
-  <!-- 左侧栏 -->
-  <div class="sidebar">
-    <div class="avatar">刘</div>
+  <!-- 头部 -->
+  <div class="header">
     <h1>刘亚茹</h1>
-    <div class="subtitle">仓储管理实习</div>
-
-    <div class="sidebar-section">
-      <h3>基本信息</h3>
-      <div class="sidebar-item"><span class="icon">👤</span>女 / 20岁</div>
-      <div class="sidebar-item"><span class="icon">📍</span>河南省新郑市</div>
-      <div class="sidebar-item"><span class="icon">📱</span>19579485089</div>
+    <div class="info">
+      <span>20岁</span><span class="divider">|</span>
+      <span>女</span><span class="divider">|</span>
+      <span>河南新郑</span>
     </div>
-
-    <div class="sidebar-section">
-      <h3>教育信息</h3>
-      <div class="sidebar-item"><span class="icon">🎓</span>郑州工业应用职业技术学院</div>
-      <div class="sidebar-item"><span class="icon">📚</span>物流管理 | 大二在读</div>
-    </div>
-
-    <div class="qr-section">
-      <img id="qrcode" src="" alt="二维码">
-      <p>微信扫码查看简历</p>
+    <div class="info" style="margin-top: 4px;">
+      <span>19579485089</span>
     </div>
   </div>
 
-  <!-- 右侧主体 -->
-  <div class="main">
-    <div class="section">
-      <div class="section-title"><span class="dot"></span>求职意向</div>
-      <div class="intention">
-        <span class="label">目标岗位：</span><span class="value">仓储管理实习</span>
-        <span class="label" style="margin-left:24px;">期望城市：</span><span class="value">河南省新郑市</span>
-      </div>
+  <!-- 求职意向 -->
+  <div class="section">
+    <div class="section-title">求职意向</div>
+    <div class="section-content">
+      <table class="intention-table">
+        <tr><td class="label">目标岗位：</td><td class="value">仓储管理实习</td></tr>
+        <tr><td class="label">期望城市：</td><td class="value">河南省新郑市</td></tr>
+      </table>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-title"><span class="dot"></span>教育背景</div>
-      <div class="section-content">
-        <div class="edu-item">
-          <div class="school">郑州工业应用职业技术学院 <span class="detail">| 2024 - 至今</span></div>
-          <div class="detail">物流管理专业 | 大专 | 大二在读</div>
-          <div class="detail" style="margin-top:4px;">主修课程：仓储管理、物流学概论、供应链管理、运输管理实务、物流信息技术等</div>
-        </div>
+  <!-- 教育背景 -->
+  <div class="section">
+    <div class="section-title">教育背景</div>
+    <div class="section-content">
+      <div class="edu-line">
+        <span class="left">郑州工业应用职业技术学院 - 物流管理 - 大专</span>
+        <span class="right">2024-09 ~ 至今</span>
       </div>
+      <div class="edu-detail">主修课程：仓储管理、物流学概论、供应链管理、运输管理实务、物流信息技术等</div>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-title"><span class="dot"></span>技能证书</div>
-      <div class="section-content">
-        <span class="skill-tag">普通话等级证书</span>
-        <span class="skill-tag">全国计算机二级</span>
-        <span class="skill-tag">Office 办公软件</span>
-        <span class="skill-tag">仓储管理基础</span>
-      </div>
+  <!-- 专业技能 -->
+  <div class="section">
+    <div class="section-title">专业技能</div>
+    <div class="section-content">
+      <ul>
+        <li>熟悉仓储管理基本流程，了解入库、出库、盘点等操作规范。</li>
+        <li>熟练使用 Office 办公软件（Word、Excel、PPT），能高效处理日常文档与数据。</li>
+        <li>具备基本的计算机操作能力，已取得全国计算机二级证书。</li>
+        <li>普通话标准流利，已取得普通话等级证书，具备良好的沟通表达能力。</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-title"><span class="dot"></span>实践经历</div>
-      <div class="section-content">
-        <div class="exp-item">
-          <div class="title">校内物流管理综合实训</div>
-          <div class="desc">
-            参与校内物流管理实训课程，系统学习并实操仓储入库、出库、盘点等基本操作流程。熟悉 WMS（仓储管理系统）的基本操作逻辑，了解库位规划与库存管理的基本方法。培养了规范操作意识和团队协作能力。
-          </div>
-        </div>
+  <!-- 实践经历 -->
+  <div class="section">
+    <div class="section-title">实践经历</div>
+    <div class="section-content">
+      <div class="edu-line">
+        <span class="left">校内物流管理综合实训</span>
+        <span class="right"></span>
       </div>
+      <ul style="margin-top: 8px;">
+        <li>参与校内物流管理实训课程，系统学习仓储入库、出库、盘点等操作流程。</li>
+        <li>熟悉仓储管理系统（WMS）的基本操作逻辑，了解库位规划与库存管理方法。</li>
+        <li>在实训中担任小组成员，与团队协作完成模拟仓储调度任务。</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-title"><span class="dot"></span>自我评价</div>
-      <div class="section-content">
-        <p class="evaluation">
-          工作认真细致，责任心强，具备良好的沟通能力和团队协作意识。通过专业学习和校内实训，熟悉仓储管理基本流程，能熟练使用办公软件处理日常事务。学习能力强，踏实肯干，能够快速适应新环境，期待在实习中将理论知识与实际工作相结合，不断提升专业技能与职业素养。
-        </p>
-      </div>
+  <!-- 自我评价 -->
+  <div class="section">
+    <div class="section-title">自我评价</div>
+    <div class="section-content">
+      <p style="text-indent: 2em;">
+        工作认真细致，责任心强，具备良好的沟通能力和团队协作意识。通过专业学习和校内实训，熟悉仓储管理基本流程，能熟练使用办公软件处理日常事务。学习能力强，踏实肯干，能够快速适应新环境，期待在实习中将所学知识应用于实际工作，不断提升专业技能。
+      </p>
     </div>
   </div>
 </div>
-
-<script>
-// 用 QR 码 API 生成二维码（当前页面链接）
-var qrImg = document.getElementById('qrcode');
-var pageUrl = window.location.href;
-qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(pageUrl);
-</script>
 </body>
 </html>
